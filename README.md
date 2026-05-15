@@ -1,6 +1,6 @@
-# lupi-sdk
+# lupinho-sdk
 
-Ambiente de desenvolvimento para jogos Lupi. Monitora a pasta `src/`, processa os assets, compila o jogo para WebAssembly e serve na porta 3000 — tudo automaticamente a cada vez que você salva um arquivo.
+Ambiente de desenvolvimento para jogos do Lupinho (simulador Lupi). Monitora a pasta `src/`, processa os assets, compila o jogo para WebAssembly e serve na porta 3000 — tudo automaticamente a cada vez que você salva um arquivo.
 
 ## Pré-requisitos
 
