@@ -59,8 +59,8 @@ RUN luarocks install luasec 1.3.0-1 && \
     luarocks install argparse
 
 # Clone Lupinho & Lupi-Codec
-RUN git clone --branch 1.1.0 https://github.com/lupi-org-br/lupinho.git && \
-  git clone --branch 1.0.0 https://github.com/lupi-org-br/lupi-codec.git && \
+RUN git clone --branch main https://github.com/lupi-org-br/lupinho.git && \
+  git clone --branch main https://github.com/lupi-org-br/lupi-codec.git && \
   rm /lupinho/lupi-codec/bit.lua
 
 COPY . /lupinho/
