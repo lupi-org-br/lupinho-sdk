@@ -6,6 +6,21 @@ Ambiente de desenvolvimento para jogos do Lupinho (simulador Lupi). Monitora a p
 
 - Docker
 
+## Imagem no Docker Hub
+
+O workflow [`.github/workflows/docker-hub.yml`](.github/workflows/docker-hub.yml) publica `DOCKERHUB_USERNAME/lupinho-sdk` para `linux/amd64` e `linux/arm64` ao fazer push na `main`, ao criar uma tag `v*` ou ao disparar o workflow manualmente. Cada arquitetura é compilada no runner nativo e as duas imagens entram no mesmo manifesto.
+
+No environment **DockerHub** do repositório (**Settings → Environments → DockerHub**):
+
+| Tipo | Nome | Valor |
+|------|------|--------|
+| Variable ou Secret | `DOCKERHUB_USERNAME` | usuário do Docker Hub |
+| Secret | `DOCKERHUB_TOKEN` | access token com permissão de escrita |
+
+Um re-run reutiliza o commit do disparo original. Depois de mudar o workflow ou as credenciais, use **Run workflow** de novo na branch atual.
+
+Tags geradas: `latest` na branch padrão e em releases `v*`, a versão semver (`1.2.3`, `1.2`) e o SHA curto do commit.
+
 ## Uso
 
 ### 1. Build da imagem (apenas uma vez, ou após alterar o Dockerfile)
